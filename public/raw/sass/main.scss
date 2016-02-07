@@ -1,0 +1,297 @@
+$back-color: black;
+$menu-color: rgb(230, 230, 230);
+
+$link-active: #791c27;
+$link-bottom-active: #791c27;
+$link-bottom-inactive: #797979;
+
+@mixin background-contain ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@mixin background-cover ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin background-image ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+}
+@mixin border-radius ($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  border-radius: $rad;
+}
+@mixin box-shadow ($hoff, $voff, $blur, $color) {
+  -webkit-box-shadow: $hoff $voff $blur $color;
+  -moz-box-shadow: $hoff $voff $blur $color;
+  box-shadow: $hoff $voff $blur $color;
+}
+@mixin box-shadow-inset ($hoff, $voff, $blur, $color) {
+  -webkit-box-shadow: inset $hoff $voff $blur $color;
+  -moz-box-shadow: inset $hoff $voff $blur $color;
+  box-shadow: inset $hoff $voff $blur $color;
+}
+@mixin filter ($filter) {
+  -webkit-filter: $filter;
+  filter: $filter;
+}
+@mixin transform ($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+@mixin transition-one-eased ($easing, $prop) {
+  -webkit-transition: $easing, $prop;
+  -moz-transition: $easing, $prop;
+  -o-transition: $easing, $prop;
+  transition: $easing, $prop;
+}
+@mixin transition-two-eased ($easing, $prop1, $prop2) {
+  -webkit-transition: $easing, $prop1, $prop2;
+  -moz-transition: $easing, $prop1, $prop2;
+  -o-transition: $easing, $prop1, $prop2;
+  transition: $easing, $prop1, $prop2;
+}
+@mixin transition-three-eased ($easing, $prop1, $prop2, $prop3) {
+  -webkit-transition: $easing, $prop1, $prop2, $prop3;
+  -moz-transition: $easing, $prop1, $prop2, $prop3;
+  -o-transition: $easing, $prop1, $prop2, $prop3;
+  transition: $easing, $prop1, $prop2, $prop3;
+}
+
+body {
+  background-color: $back-color;
+  cursor: default;
+  margin: 51px 0 0 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+#about {
+  width: 100vw;
+
+  #usmc {
+    background-color: #000066;
+    color: #CC9900;
+    display: flex;
+    height: 100vh;
+
+    .blob {
+      font-family: sans-serif;
+      font-size: 1.5em;
+      margin: 20px;
+      width: 65%;
+    }
+    .bloodstripe {
+      background-color: #CC0000;
+      height: 100%;
+      width: 50px;
+    }
+    .logo {
+      background-position-y: 50%;
+      height: 100%;
+      margin: 0 50px 0 50px;
+      width: 300px;
+      @include background-contain('/images/logos/Eagle Globe Anchor.png');
+    }
+  }
+  #mu {
+    background-color: #000000;
+    color: #F1B82D;
+    display: flex;
+    height: 100vh;
+
+    .blob {
+      font-family: sans-serif;
+      font-size: 1.5em;
+      margin: 20px;
+      width: 65%;
+    }
+    .logo {
+      background-position-y: 50%;
+      height: 100%;
+      margin: 0 50px 0 50px;
+      width: 300px;
+      @include background-contain('/images/logos/MU_StackedMU_RGB.png');
+    }
+  }
+}
+#contact {
+  background-color: $menu-color;
+  background-position: 75% 50%;
+  height: 100vh;
+  width: 100vw;
+  @include background-cover('/images/backgrounds/DSC03178_panorama.jpg');
+
+  .blob {
+    height: 100%;
+  }
+
+  #footer {
+    background-color: gray;
+    top: auto;
+    bottom: 0;
+    border-top: 2px solid $link-active;
+    height: 100px;
+    position: relative;
+
+    .copyright {
+      font-family: Play;
+      font-size: .75em;
+      position: relative;
+      text-align: center;
+      top: 30px;
+    }
+    .social-media {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: 15px;
+
+      img {
+        height: 32px;
+        padding: 0 4px 0 4px;
+      }
+    }
+  }
+}
+#home {
+  background-position: 50% 95%;
+  font-family: Play;
+  height: 100vh;
+  width: 100vw;
+  @include background-cover('/images/backgrounds/Schwab Range.png');
+
+  .blob {
+    border: 2px solid $link-active;
+    color: $menu-color;
+    font-size: 1.5em;
+    left: 0;
+    margin-left: -350px;
+    padding: 10px;
+    position: relative;
+    top: 25%;
+    width: 300px;
+    z-index: 1;
+    @include border-radius(10px);
+  }
+  .blob::after {
+    content: "";
+    background-color: black;
+    bottom: 0;
+    opacity: 0.75;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    @include border-radius(10px);
+  }
+}
+#loading {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+
+  .blob {
+    color: $link-active;
+    font-family: Orbitron;
+    font-size: 2em;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+  }
+  .logo {
+    height: 142px;
+    left: 50%;
+    margin-top: -125px;
+    position: absolute;
+    top: 50%;
+    width: 141px;
+    @include background-contain('/images/logos/mine.png');
+    @include filter(invert(50%));
+  }
+  .pulse-animation {
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-name: pulse_animation;
+    animation-timing-function: linear;
+  }
+}
+#menu {
+  background-color: $menu-color;
+  border-bottom: 2px solid $link-active;
+  display: flex;
+  font-family: Orbitron;
+  height: 40px;
+  margin-top: -115px;
+  padding: 8px 50px 2px 50px;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  @include transition-one-eased(ease-in-out, margin .5s ease-in-out);
+
+  .logo {
+    height: 38px;
+    margin-right: 10px;
+    margin-top: -4px;
+    width: 40px;
+    @include background-contain('/images/logos/mine.png');
+  }
+
+  #links {
+    display: inline-block;
+
+    span {
+      display: inline-block;
+      font-size: 1.25em;
+      height: 30px;
+      line-height: 35px;
+      margin: 0 5px 0 5px;
+      text-align: center;
+      vertical-align: middle;
+      width: 125px;
+      @include transition-three-eased(ease-in-out, height .1s ease-in-out, border-width .1s ease-in-out, color .1s ease-in-out);
+    }
+
+    .active {
+      border-bottom: 5px solid $link-bottom-active;
+      color: $link-active;
+      line-height: 30px;
+      height: 25px;
+    }
+    .inactive {
+      color: $link-bottom-inactive;
+      cursor: pointer;
+    }
+    .inactive:hover {
+      border-bottom: 5px solid $link-bottom-inactive;
+      color: inherit;
+      font-weight: bold;
+      line-height: 30px;
+      height: 25px;
+    }
+  }
+  #name {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+}
+
+.blob {
+  @include transition-two-eased(ease-in-out, margin .5s ease-in-out, left .5s ease-in-out);
+}
+
+@keyframes pulse_animation {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  25% { transform: translate(-50%, -50%) scale(1.5); }
+  50% { transform: translate(-50%, -50%) scale(1); }
+  75% { transform: translate(-50%, -50%) scale(0.5); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}

@@ -1,0 +1,22 @@
+{
+    "name" : "Portfolio",
+    "description" : "This is my portfolio",
+    "minimum-stability" : "dev",
+    "license" : "proprietary",
+    "authors" : [
+        {
+            "name" : "Darren Eidson",
+            "email" : "pcpopper@hotmail.com"
+        }
+    ],
+    "require" : {
+        "php" : ">=5.5",
+        "zendframework/zend-servicemanager": "~2.4",
+        "zendframework/zend-db": "~2.6"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Portfolio\\" : "./"
+        }
+    }
+}

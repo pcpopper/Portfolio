@@ -1,0 +1,17 @@
+{
+  "name": "My-Portfolio",
+  "description": "My",
+  "main": "gulpfile.js",
+  "author": "Darren Eidson",
+  "license": "N/A",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-install": "^0.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5"
+  }
+}
