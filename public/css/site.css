@@ -1,125 +1,20 @@
 body {
   background-color: black;
   cursor: default;
+  font-family: Play;
   margin: 51px 0 0 0;
   overflow-x: hidden;
   padding: 0; }
 
-#about {
-  width: 100vw; }
-  #about #usmc {
-    background-color: #000066;
-    color: #CC9900;
-    display: flex;
-    height: 100vh; }
-    #about #usmc .blob {
-      font-family: sans-serif;
-      font-size: 1.5em;
-      margin: 20px;
-      width: 65%; }
-    #about #usmc .bloodstripe {
-      background-color: #CC0000;
-      height: 100%;
-      width: 50px; }
-    #about #usmc .logo {
-      background-position-y: 50%;
-      height: 100%;
-      margin: 0 50px 0 50px;
-      width: 300px;
-      background-image: url("/images/logos/Eagle Globe Anchor.png");
-      background-repeat: no-repeat;
-      background-size: contain; }
-  #about #mu {
-    background-color: #000000;
-    color: #F1B82D;
-    display: flex;
-    height: 100vh; }
-    #about #mu .blob {
-      font-family: sans-serif;
-      font-size: 1.5em;
-      margin: 20px;
-      width: 65%; }
-    #about #mu .logo {
-      background-position-y: 50%;
-      height: 100%;
-      margin: 0 50px 0 50px;
-      width: 300px;
-      background-image: url("/images/logos/MU_StackedMU_RGB.png");
-      background-repeat: no-repeat;
-      background-size: contain; }
-
-#contact {
-  background-color: #e6e6e6;
-  background-position: 75% 50%;
-  height: 100vh;
+section {
   width: 100vw;
-  background-image: url("/images/backgrounds/DSC03178_panorama.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; }
-  #contact .blob {
-    height: 100%; }
-  #contact #footer {
-    background-color: gray;
-    top: auto;
-    bottom: 0;
-    border-top: 2px solid #791c27;
-    height: 100px;
-    position: relative; }
-    #contact #footer .copyright {
-      font-family: Play;
-      font-size: .75em;
-      position: relative;
-      text-align: center;
-      top: 30px; }
-    #contact #footer .social-media {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      top: 15px; }
-      #contact #footer .social-media img {
-        height: 32px;
-        padding: 0 4px 0 4px; }
-
-#home {
-  background-position: 50% 95%;
-  font-family: Play;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("/images/backgrounds/Schwab Range.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
-  #home .blob {
-    border: 2px solid #791c27;
-    color: #e6e6e6;
-    font-size: 1.5em;
-    left: 0;
-    margin-left: -350px;
-    padding: 10px;
-    position: relative;
-    top: 25%;
-    width: 300px;
-    z-index: 1;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px; }
-  #home .blob::after {
-    content: "";
-    background-color: black;
-    bottom: 0;
-    opacity: 0.75;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px; }
+  border-bottom: 2px solid #791c27; }
 
 #loading {
   background-color: black;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  z-index: 999; }
   #loading .blob {
     color: #791c27;
     font-family: Orbitron;
@@ -203,7 +98,120 @@ body {
     font-weight: bold;
     margin-right: 20px; }
 
-.blob {
+#contact {
+  background-color: #e6e6e6;
+  background-position: 75% 50%;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/images/backgrounds/DSC03178_panorama.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  #contact .blob {
+    height: 100%; }
+  #contact #footer {
+    background-color: gray;
+    top: auto;
+    bottom: 0;
+    border-top: 2px solid #791c27;
+    height: 100px;
+    position: relative; }
+    #contact #footer .copyright {
+      font-family: Play;
+      font-size: .75em;
+      position: relative;
+      text-align: center;
+      top: 30px; }
+    #contact #footer .social-media {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: 15px; }
+      #contact #footer .social-media img {
+        height: 32px;
+        padding: 0 4px 0 4px; }
+
+#home {
+  background-position: 50% 95%;
+  font-family: Play;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/images/backgrounds/Schwab Range.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  #home .blob {
+    border: 2px solid #791c27;
+    color: #e6e6e6;
+    font-size: 1.5em;
+    height: 200px;
+    left: 0;
+    margin-left: -350px;
+    padding: 10px;
+    position: fixed;
+    top: 25%;
+    width: 300px;
+    z-index: 1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; }
+  #home .blob::after {
+    content: "";
+    background-color: black;
+    bottom: 0;
+    opacity: 0.75;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; }
+
+#mu {
+  background-color: #000000;
+  color: #F1B82D;
+  display: flex;
+  height: 100vh; }
+  #mu .blob {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    margin: 20px;
+    width: 65%; }
+  #mu .logo {
+    background-position-y: 50%;
+    height: 100%;
+    margin: 0 50px 0 50px;
+    width: 300px;
+    background-image: url("/images/logos/MU_StackedMU_RGB.png");
+    background-repeat: no-repeat;
+    background-size: contain; }
+
+#usmc {
+  background-color: #000066;
+  color: #CC9900;
+  display: flex;
+  height: 100vh; }
+  #usmc .blob {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    margin: 20px;
+    width: 65%; }
+  #usmc .bloodstripe {
+    background-color: #CC0000;
+    height: 100%;
+    width: 50px; }
+  #usmc .logo {
+    background-position-y: 50%;
+    height: 100%;
+    margin: 0 50px 0 50px;
+    width: 300px;
+    background-image: url("/images/logos/Eagle Globe Anchor.png");
+    background-repeat: no-repeat;
+    background-size: contain; }
+
+.ease {
   -webkit-transition: ease-in-out, margin 0.5s ease-in-out, left 0.5s ease-in-out;
   -moz-transition: ease-in-out, margin 0.5s ease-in-out, left 0.5s ease-in-out;
   -o-transition: ease-in-out, margin 0.5s ease-in-out, left 0.5s ease-in-out;
@@ -220,3 +228,117 @@ body {
     transform: translate(-50%, -50%) scale(0.5); }
   100% {
     transform: translate(-50%, -50%) scale(1); } }
+
+#about {
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  #about #me {
+    border: 2px solid #791c27;
+    height: 150px;
+    position: absolute;
+    top: -50px;
+    width: 150px;
+    z-index: 999;
+    background-image: url("/images/me.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 3px 3px 10px #000;
+    -moz-box-shadow: 3px 3px 10px #000;
+    box-shadow: 3px 3px 10px #000; }
+  #about .blob {
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    z-index: 1; }
+    #about .blob a {
+      background-color: red;
+      border: 2px solid #797979;
+      color: inherit;
+      height: 25px;
+      padding: 5px 10px;
+      text-decoration: none;
+      width: 100px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      background: #919191;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #AAAAAA 0%, #797979 50%, #444444 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #AAAAAA 0%, #797979 50%, #444444 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #AAAAAA 0%, #797979 50%, #444444 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+      #about .blob a:hover {
+        background: #919191;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #AA2938 0%, #791C27 50%, #420F15 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #AA2938 0%, #791C27 50%, #420F15 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #AA2938 0%, #791C27 50%, #420F15 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+      #about .blob a:active {
+        background: #919191;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #420F15 0%, #791C27 50%, #AA2938 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #420F15 0%, #791C27 50%, #AA2938 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #420F15 0%, #791C27 50%, #AA2938 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+    #about .blob pre {
+      font-family: Play;
+      margin: -12px 0 0 -73px; }
+    #about .blob .company {
+      font-family: sans-serif;
+      font-size: larger;
+      font-weight: bolder;
+      font-variant: small-caps; }
+    #about .blob .dates {
+      font-size: small;
+      font-style: italic;
+      margin-left: 10px; }
+    #about .blob .location {
+      font-family: sans-serif;
+      font-size: small;
+      font-style: italic;
+      font-variant: small-caps; }
+    #about .blob .position {
+      text-decoration: underline; }
+    #about .blob::after {
+      content: "";
+      background-color: white;
+      bottom: 0;
+      opacity: 0.65;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: -1; }
+  #about .header {
+    text-align: center;
+    padding-top: 25px;
+    color: #791C27;
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 0 0 10px #FFF; }
+  #about::after {
+    content: "";
+    background-color: navy;
+    bottom: 0;
+    opacity: 0.1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1; }

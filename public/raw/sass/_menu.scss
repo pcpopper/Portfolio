@@ -1,0 +1,60 @@
+#menu {
+  background-color: $menu-color;
+  border-bottom: 2px solid $link-active;
+  display: flex;
+  font-family: Orbitron;
+  height: 40px;
+  margin-top: -115px;
+  padding: 8px 50px 2px 50px;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  @include transition-one-eased(ease-in-out, margin .5s ease-in-out);
+
+  .logo {
+    height: 38px;
+    margin-right: 10px;
+    margin-top: -4px;
+    width: 40px;
+    @include background-contain('/images/logos/mine.png');
+  }
+
+  #links {
+    display: inline-block;
+
+    span {
+      display: inline-block;
+      font-size: 1.25em;
+      height: 30px;
+      line-height: 35px;
+      margin: 0 5px 0 5px;
+      text-align: center;
+      vertical-align: middle;
+      width: 125px;
+      @include transition-three-eased(ease-in-out, height .1s ease-in-out, border-width .1s ease-in-out, color .1s ease-in-out);
+    }
+
+    .active {
+      border-bottom: 5px solid $link-bottom-active;
+      color: $link-active;
+      line-height: 30px;
+      height: 25px;
+    }
+    .inactive {
+      color: $link-bottom-inactive;
+      cursor: pointer;
+    }
+    .inactive:hover {
+      border-bottom: 5px solid $link-bottom-inactive;
+      color: inherit;
+      font-weight: bold;
+      line-height: 30px;
+      height: 25px;
+    }
+  }
+  #name {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+}

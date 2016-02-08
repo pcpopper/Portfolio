@@ -1,0 +1,118 @@
+#contact {
+  background-color: $menu-color;
+  background-position: 75% 50%;
+  height: 100vh;
+  width: 100vw;
+  @include background-cover-fixed('/images/backgrounds/DSC03178_panorama.jpg');
+
+  .blob {
+    height: 100%;
+  }
+
+  #footer {
+    background-color: gray;
+    top: auto;
+    bottom: 0;
+    border-top: 2px solid $link-active;
+    height: 100px;
+    position: relative;
+
+    .copyright {
+      font-family: Play;
+      font-size: .75em;
+      position: relative;
+      text-align: center;
+      top: 30px;
+    }
+    .social-media {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: 15px;
+
+      img {
+        height: 32px;
+        padding: 0 4px 0 4px;
+      }
+    }
+  }
+}
+#home {
+  background-position: 50% 95%;
+  font-family: Play;
+  height: 100vh;
+  width: 100vw;
+  @include background-cover-fixed('/images/backgrounds/Schwab Range.png');
+
+  .blob {
+    border: 2px solid $link-active;
+    color: $menu-color;
+    font-size: 1.5em;
+    height: 200px;
+    left: 0;
+    margin-left: -350px;
+    padding: 10px;
+    position: fixed;
+    top: 25%;
+    width: 300px;
+    z-index: 1;
+    @include border-radius(10px);
+  }
+  .blob::after {
+    content: "";
+    background-color: black;
+    bottom: 0;
+    opacity: 0.75;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    @include border-radius(10px);
+  }
+}
+#mu {
+  background-color: #000000;
+  color: #F1B82D;
+  display: flex;
+  height: 100vh;
+
+  .blob {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    margin: 20px;
+    width: 65%;
+  }
+  .logo {
+    background-position-y: 50%;
+    height: 100%;
+    margin: 0 50px 0 50px;
+    width: 300px;
+    @include background-contain('/images/logos/MU_StackedMU_RGB.png');
+  }
+}
+#usmc {
+  background-color: #000066;
+  color: #CC9900;
+  display: flex;
+  height: 100vh;
+
+  .blob {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    margin: 20px;
+    width: 65%;
+  }
+  .bloodstripe {
+    background-color: #CC0000;
+    height: 100%;
+    width: 50px;
+  }
+  .logo {
+    background-position-y: 50%;
+    height: 100%;
+    margin: 0 50px 0 50px;
+    width: 300px;
+    @include background-contain('/images/logos/Eagle Globe Anchor.png');
+  }
+}

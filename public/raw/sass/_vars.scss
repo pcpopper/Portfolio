@@ -1,0 +1,88 @@
+$back-color: black;
+$menu-color: rgb(230, 230, 230);
+
+$link-active: #791c27;
+$link-bottom-active: #791c27;
+$link-bottom-inactive: #797979;
+
+@mixin background-contain ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@mixin background-contain-fixed ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+@mixin background-cover ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin background-cover-fixed ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+@mixin background-image ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+}
+@mixin background-image-fixed ($src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@mixin gradient-linear-three ($from, $to, $prop1, $prop2, $prop3) {
+  background: #919191; /* Old browsers */
+  background: -moz-linear-gradient($to, $prop1, $prop2, $prop3); /* FF3.6-15 */
+  background: -webkit-linear-gradient($to, $prop1, $prop2, $prop3); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to $from, $prop1, $prop2, $prop3); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+@mixin border-radius ($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  border-radius: $rad;
+}
+@mixin box-shadow ($hoff, $voff, $blur, $color) {
+  -webkit-box-shadow: $hoff $voff $blur $color;
+  -moz-box-shadow: $hoff $voff $blur $color;
+  box-shadow: $hoff $voff $blur $color;
+}
+@mixin box-shadow-inset ($hoff, $voff, $blur, $color) {
+  -webkit-box-shadow: inset $hoff $voff $blur $color;
+  -moz-box-shadow: inset $hoff $voff $blur $color;
+  box-shadow: inset $hoff $voff $blur $color;
+}
+@mixin filter ($filter) {
+  -webkit-filter: $filter;
+  filter: $filter;
+}
+@mixin transform ($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+@mixin transition-one-eased ($easing, $prop) {
+  -webkit-transition: $easing, $prop;
+  -moz-transition: $easing, $prop;
+  -o-transition: $easing, $prop;
+  transition: $easing, $prop;
+}
+@mixin transition-two-eased ($easing, $prop1, $prop2) {
+  -webkit-transition: $easing, $prop1, $prop2;
+  -moz-transition: $easing, $prop1, $prop2;
+  -o-transition: $easing, $prop1, $prop2;
+  transition: $easing, $prop1, $prop2;
+}
+@mixin transition-three-eased ($easing, $prop1, $prop2, $prop3) {
+  -webkit-transition: $easing, $prop1, $prop2, $prop3;
+  -moz-transition: $easing, $prop1, $prop2, $prop3;
+  -o-transition: $easing, $prop1, $prop2, $prop3;
+  transition: $easing, $prop1, $prop2, $prop3;
+}
+
