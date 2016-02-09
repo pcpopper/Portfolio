@@ -43,13 +43,14 @@
     .inactive {
       color: $link-bottom-inactive;
       cursor: pointer;
-    }
-    .inactive:hover {
-      border-bottom: 5px solid $link-bottom-inactive;
-      color: inherit;
-      font-weight: bold;
-      line-height: 30px;
-      height: 25px;
+
+      &:hover {
+        border-bottom: 5px solid $link-bottom-inactive;
+        color: inherit;
+        font-weight: bold;
+        line-height: 30px;
+        height: 25px;
+      }
     }
   }
   #name {

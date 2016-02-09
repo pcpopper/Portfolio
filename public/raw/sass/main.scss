@@ -9,8 +9,8 @@ body {
   padding: 0;
 }
 section {
-  width: 100vw;
   border-bottom: 2px solid $link-active;
+  width: 100vw;
 }
 
 #loading {
@@ -51,6 +51,9 @@ section {
 .ease {
   @include transition-two-eased(ease-in-out, margin .5s ease-in-out, left .5s ease-in-out);
 }
+.hide {
+  display: none !important;
+}
 
 @keyframes pulse_animation {
   0% { transform: translate(-50%, -50%) scale(1); }
@@ -58,107 +61,4 @@ section {
   50% { transform: translate(-50%, -50%) scale(1); }
   75% { transform: translate(-50%, -50%) scale(0.5); }
   100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-#about {
-  padding-bottom: 40px;
-  position: relative;
-  z-index: 1;
-  @include background-cover-fixed('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-3.jpg');
-
-  #me {
-    border: 2px solid $link-active;
-    height: 150px;
-    position: absolute;
-    top: -50px;
-    width: 150px;
-    z-index: 999;
-    @include background-contain('/images/me.png');
-    @include border-radius(50%);
-    @include box-shadow(3px, 3px, 10px, #000);
-  }
-
-  .blob {
-    margin-top: 10px;
-    overflow: hidden;
-    padding: 0 20px 20px 20px;
-    position: relative;
-    z-index: 1;
-
-    a {
-      background-color: red;
-      border: 2px solid $link-bottom-inactive;
-      color: inherit;
-      height: 25px;
-      padding: 5px 10px;
-      text-decoration: none;
-      width: 100px;
-      @include border-radius(15px);
-      @include gradient-linear-three(bottom, top, #AAAAAA 0%, #797979 50%, #444444 100%);
-
-      &:hover {
-        @include gradient-linear-three(bottom, top, #AA2938 0%, #791C27 50%, #420F15 100%);
-      }
-      &:active {
-        @include gradient-linear-three(bottom, top, #420F15 0%, #791C27 50%, #AA2938 100%);
-      }
-    }
-    pre {
-      font-family: Play;
-      margin: -12px 0 0 -73px;
-    }
-
-    .company {
-      font-family: sans-serif;
-      font-size: larger;
-      font-weight: bolder;
-      font-variant: small-caps;
-    }
-    .dates {
-      font-size: small;
-      font-style: italic;
-      margin-left: 10px;
-    }
-    .location {
-      font-family: sans-serif;
-      font-size: small;
-      font-style: italic;
-      font-variant: small-caps;
-    }
-    .position {
-      text-decoration: underline;
-    }
-
-    &::after {
-      content: "";
-      background-color: white;
-      bottom: 0;
-      opacity: 0.65;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      z-index: -1;
-    }
-  }
-  .header {
-    text-align: center;
-    padding-top: 25px;
-    color: #791C27;
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow: 0 0 10px #FFF;
-  }
-
-  &::after {
-    content: "";
-    background-color: navy;
-    bottom: 0;
-    opacity: 0.1;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
 }

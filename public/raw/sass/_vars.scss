@@ -36,6 +36,15 @@ $link-bottom-inactive: #797979;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+@mixin blur ($amt) {
+  filter: blur($amt);
+  -webkit-filter: blur($amt);
+}
+@mixin columns ($count) {
+  -webkit-column-count:$count;
+  -moz-column-count: $count;
+  column-count: $count;
+}
 @mixin gradient-linear-three ($from, $to, $prop1, $prop2, $prop3) {
   background: #919191; /* Old browsers */
   background: -moz-linear-gradient($to, $prop1, $prop2, $prop3); /* FF3.6-15 */
