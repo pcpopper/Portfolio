@@ -6,16 +6,16 @@
         <title>Darren Eidson's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Orbitron" />
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Play" />
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-<!--        <link rel="stylesheet" type="text/css" href="css/site.min.css">-->
-        <link rel="stylesheet" type="text/css" href="raw/css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/site.min.css">
+<!--        <link rel="stylesheet" type="text/css" href="raw/css/main.css">-->
         <script type="application/javascript" src="js/jquery-2.1.4.min.js"></script>
-<!--        <script type="application/javascript" src="js/scripts.min.js"></script>-->
-        <script type="application/javascript" src="raw/js/_functions.js"></script>
-        <script type="application/javascript" src="raw/js/_menu.js"></script>
-        <script type="application/javascript" src="raw/js/_sections.js"></script>
-        <script type="application/javascript" src="raw/js/_vars.js"></script>
-        <script type="application/javascript" src="raw/js/scripts.js"></script>
+        <script type="application/javascript" src="js/scripts.min.js"></script>
+<!--        <script type="application/javascript" src="raw/js/_functions.js"></script>-->
+<!--        <script type="application/javascript" src="raw/js/_menu.js"></script>-->
+<!--        <script type="application/javascript" src="raw/js/_sections.js"></script>-->
+<!--        <script type="application/javascript" src="raw/js/_vars.js"></script>-->
+<!--        <script type="application/javascript" src="raw/js/scripts.js"></script>-->
     </head>
     <body>
         <nav id="menu">

@@ -32,7 +32,7 @@ function setDimensions () {
             'width': {start: (viewerWidth * .66)}
         },
         blobHome: {
-            'margin-left': {start: -350, mid: (viewerWidth * .15), end: -350},
+            'margin-left': {init: -350, start: (viewerWidth * .15), mid: (viewerWidth * .15), end: -350},
             'top': {start: ((viewerHeight - elements.blobHome.height()) / 2) + 'px'}
         },
         divMe: {
@@ -43,10 +43,12 @@ function setDimensions () {
     $.each(elementsInfo, function(el, vars) {
         var newCss = {};
         $.each(vars, function(css, vars) {
-            newCss[css] = vars.start;
+            newCss[css] = (initLoad && typeof vars.init !== "undefined") ? vars.init : vars.start;
         });
         elements[el].css(newCss);
     });
+
+    if (initLoad) { initLoad = false; }
 }
 
 function setTops () {

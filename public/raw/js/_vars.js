@@ -48,6 +48,7 @@ var elements = {
 
     navMenu: '#menu'
 };
+var initLoad = true;
 
 var viewerHeight;
 var viewerWidth;

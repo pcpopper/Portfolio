@@ -17,39 +17,84 @@ var Sections = function (options) {
     };
 
     this.watchScrolling = function () {
-        var currIdx = 0;
-        var nextIdx = 0;
-        var nextTop = 0;
-        var prevTop = 0;
+        var currIdx = nextIdx = nextTop = prevTop = scrollTop = height = c = y = 0;
         var sectionsArr = this.sectionsArr;
-        var scrollTop = 0;
-        var height = 0;
 
         nextTop = sections[this.sectionsArr[1]].top;
 
         $(window).scroll(function () {
             scrollTop = $(window).scrollTop();
 
-            switch (sectionsArr[currIdx]) {
-                case 'home':
-                    height = $('#home').height();
-                    points = {start: 0, mid: (height * .25), end: (height * .5)};
+            var els = {
+                home: $('#home'),
+                projects: $('#projects'),
+                about: $('#about'),
+                contact: $('#contact')
+            };
 
-                    if (scrollTop >= points.mid && scrollTop <= points.end) {
-                        //elements.blobHome.css({opacity})
-                        console.log(((points.end - points.mid) / points.end));
+            var vars = {
+                home: {
+                    blob: {
+                        start: {start: 0, end: 0},
+                        end: {start: (viewerHeight * .15), end: (viewerHeight * .5)}
                     }
-                    //console.log([, scrollTop]);
-                    //
-                    //if (scrollTop < (height * .015)) {
-                    //    elements.blobHome.css({'margin-left': elementsInfo.blobHome['margin-left'].mid});
-                    //} else {
-                    //    elements.blobHome.css({'margin-left': (elementsInfo.blobHome['margin-left'].end * (perLocation + .1)) + 'px'});
-                    //}
-                    break;
-                case 1:
-                    //if ()
-                    break;
+                },
+                projects: {
+                    me: {
+                        start: {start: 0, end: 0},
+                        end: {start: 0, end: 0}
+                    }
+                },
+                about: {
+                    me: {
+                        start: {start: (els.about.offset().top - (viewerHeight - (viewerHeight * .01))), end: (els.about.offset().top - (viewerHeight - (viewerHeight * .15)))},
+                        end: {start: (els.about.offset().top - (viewerHeight - (viewerHeight * .75))), end: (els.about.offset().top - (viewerHeight - (viewerHeight * .944)))}
+                    }
+                },
+                contact: {
+                    me: {
+                        start: {start: 0, end: 0},
+                        end: {start: 0, end: 0}
+                    }
+                }
+            };
+
+            // home blog
+            points = vars.home.blob;
+            if (points.end.start > 0) {
+                end = points.end;
+                if (scrollTop >= end.start && scrollTop <= end.end) {
+                    c = (end.end - end.start);
+                    y = 1 - ((((-1 / c) * scrollTop) + (end.start / c)) * -1);
+
+                    elements.blobHome.css({'opacity': y});
+                } else if (scrollTop < end.start) {
+                    elements.blobHome.css({'opacity': '1'});
+                } else {
+                    elements.blobHome.css({'opacity': '0'});
+                }
+            }
+
+             //about me
+            points = vars.about.me;
+            if (points.start.start > 0) {
+                start = points.start;
+                end = points.end;
+                if (scrollTop >= start.start && scrollTop <= start.end) {
+                    c = (start.end - start.start);
+                    y = ((((-1 / c) * scrollTop) + (start.start / c)) * -1);
+
+                    elements.divMe.css({'margin-top': (y * -50) + 'px'});
+                } else if (scrollTop >= end.start && scrollTop <= end.end) {
+                    c = (end.end - end.start);
+                    y = 1 - ((((-1 / c) * scrollTop) + (end.start / c)) * -1);
+
+                    elements.divMe.css({'margin-top': (y * -50) + 'px'});
+                } else if (scrollTop > start.end && scrollTop < end.start) {
+                    elements.divMe.css({'margin-top': '-50px'});
+                } else {
+                    elements.divMe.css({'margin-top': '0px'});
+                }
             }
 
             if (nextTop != null && scrollTop > nextTop) {
@@ -58,7 +103,6 @@ var Sections = function (options) {
                 nextIdx--;
             }
 
-            //console.log([prevTop, scrollTop, nextTop, '-', currIdx, nextIdx, '-',  _self.sectionsMenuArr[nextIdx], (_self.sectionsMenuArr[nextIdx] != '')?'true':'false']);
             if (nextIdx != currIdx) {
                 currIdx = nextIdx;
 
@@ -66,28 +110,6 @@ var Sections = function (options) {
                 nextTop = ((currIdx + 1) < sectionsArr.length) ? sections[sectionsArr[currIdx + 1]].top : null;
             }
         });
-        //var viewerheightAdjusted = (viewerHeight * .5);
-        //var currIdx = Math.floor(currLoc / viewerheightAdjusted);
-        //var perLocation = ((currLoc - (currIdx * viewerheightAdjusted)) / viewerheightAdjusted);
-        //
-        //switch (currIdx) {
-        //    case 0:
-        //        if (isNaN(perLocation) || perLocation < 0.01) {
-        //            elements.blobHome.css({'margin-left': elementsInfo.blobHome['margin-left'].mid});
-        //        } else {
-        //            elements.blobHome.css({'margin-left': (elementsInfo.blobHome['margin-left'].end * (perLocation + .1)) + 'px'});
-        //        }
-        //        break;
-        //    case 1:
-        //        //if ()
-        //        break;
-        //}
-        //
-        //if (currIdx > 0) {
-        //    elements.blobHome.css({'margin-left': elementsInfo.blobHome['margin-left'].end + 'px'});
-        //} else {
-        //    //elements.
-        //}
     };
 
     return this.init();
